@@ -18,6 +18,11 @@ import { createPost } from "./controllers/post.js"
 
 import {verifyToken} from "./middleware/auth.js";
 
+import User from "./models/User.js"
+import Post from "./models/Post.js"
+
+import { users, posts } from "./data/index.js"
+
 // CONFIGURATION
 
 // Grabs the file URL and converts it to a path
@@ -89,6 +94,10 @@ mongoose.connect(process.env.MONGODB_URL, {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {
         console.log(`Server running on port: ${PORT}`);
+
+        // User.insertMany(users);
+        // Post.insertMany(posts);
+
     });
 }).catch(error => {
     console.log(error.message);
