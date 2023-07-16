@@ -1,9 +1,19 @@
 import React from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import LoginPage from "./scenes/loginPage";
+import HomePage from "./scenes/homePage";
+import ProfilePage from "./scenes/profilePage";
 
 function App() {
     return (
         <div className="app">
-            <h1>React App</h1>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<LoginPage />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/profile/:userId" element={<ProfilePage />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
