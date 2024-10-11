@@ -1,0 +1,1 @@
+cd client && pnpm run lint && pnpm run build && cd ../server && pnpm run lint && pnpm run build
